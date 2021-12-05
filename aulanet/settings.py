@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
+
+Developer:Willber RR
+Deate creating: december 5th 2021
 """
 
 from pathlib import Path
@@ -37,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #local apps
+    'users',
+
 ]
 
 MIDDLEWARE = [
@@ -73,10 +79,20 @@ WSGI_APPLICATION = 'aulanet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_aulanet',
+        'USER': 'postgres',
+        'PASSWORD': '1986',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
